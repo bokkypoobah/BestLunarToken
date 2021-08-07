@@ -99,9 +99,16 @@
 
               <b-tab title="Owners">
                 <b-card-text>
-                  CONNECT WALLET and wait while 33 x 33 web3 calls are retrieving the data. View your browser Developer Console for progress.
+                  <div v-if="plots.length == 0">
+                    Click CONNECT WALLET to view the data...
+                  </div>
+
+                  <!-- {{ plots }} -->
+
+                  <b-table small :items="plots" responsive="sm">
+                  </b-table>
                 </b-card-text>
-                <b-card-text>
+                <!-- <b-card-text>
                   <b-row v-for="(row, rowIndex) in owners.reverse()" v-bind:key="rowIndex" class="m-0 p-0">
                     <b-col v-for="(col, colIndex) in row" v-bind:key="colIndex" class="m-0 p-0">
                       <div v-if="col == '0x000001f568875F378Bf6d170B790967FE429C81A'">
@@ -116,7 +123,7 @@
                       </div>
                     </b-col>
                   </b-row>
-                </b-card-text>
+                </b-card-text> -->
               </b-tab>
 
               <!--
@@ -307,6 +314,9 @@
         data: {
           connected: false,
           account: null,
+
+          plots: [],
+
           owners: [],
           status: [],
           tokensOwned: [],
@@ -529,50 +539,53 @@
 
                 const lunarToken = new ethers.Contract(LUNARTOKENADDRESS, LUNARTOKENABI, provider);
                 console.log(new Date().toUTCString() + " Starting query");
-                const symbol = await lunarToken.symbol();
-                console.log(new Date().toUTCString() + " symbol: " + symbol);
-                const name = await lunarToken.name();
-                console.log(new Date().toUTCString() + " name: " + name);
+                // const symbol = await lunarToken.symbol();
+                // console.log(new Date().toUTCString() + " symbol: " + symbol);
+                // const name = await lunarToken.name();
+                // console.log(new Date().toUTCString() + " name: " + name);
                 const numPlots = await lunarToken.numPlots();
                 console.log(new Date().toUTCString() + " numPlots: " + numPlots);
-                const totalOwned = await lunarToken.totalOwned();
-                console.log(new Date().toUTCString() + " totalOwned: " + totalOwned);
-                const totalPurchases = await lunarToken.totalPurchases();
-                console.log(new Date().toUTCString() + " totalPurchases: " + totalPurchases);
-                const initialPrice = await lunarToken.initialPrice();
-                console.log(new Date().toUTCString() + " initialPrice: " + ethers.utils.formatEther(initialPrice) + " ETH");
-                const feePercentage = await lunarToken.feePercentage();
-                console.log(new Date().toUTCString() + " feePercentage: " + feePercentage);
-                const tradingEnabled = await lunarToken.tradingEnabled();
-                console.log(new Date().toUTCString() + " tradingEnabled: " + tradingEnabled);
-                const subdivisionEnabled = await lunarToken.subdivisionEnabled();
-                console.log(new Date().toUTCString() + " subdivisionEnabled: " + subdivisionEnabled);
-                const maxSubdivisions = await lunarToken.maxSubdivisions();
-                console.log(new Date().toUTCString() + " maxSubdivisions: " + maxSubdivisions);
-                const balance = await provider.getBalance(LUNARTOKENADDRESS)
-                console.log(new Date().toUTCString() + " balance: " + ethers.utils.formatEther(balance) + " ETH");
+                // const totalOwned = await lunarToken.totalOwned();
+                // console.log(new Date().toUTCString() + " totalOwned: " + totalOwned);
+                // const totalPurchases = await lunarToken.totalPurchases();
+                // console.log(new Date().toUTCString() + " totalPurchases: " + totalPurchases);
+                // const initialPrice = await lunarToken.initialPrice();
+                // console.log(new Date().toUTCString() + " initialPrice: " + ethers.utils.formatEther(initialPrice) + " ETH");
+                // const feePercentage = await lunarToken.feePercentage();
+                // console.log(new Date().toUTCString() + " feePercentage: " + feePercentage);
+                // const tradingEnabled = await lunarToken.tradingEnabled();
+                // console.log(new Date().toUTCString() + " tradingEnabled: " + tradingEnabled);
+                // const subdivisionEnabled = await lunarToken.subdivisionEnabled();
+                // console.log(new Date().toUTCString() + " subdivisionEnabled: " + subdivisionEnabled);
+                // const maxSubdivisions = await lunarToken.maxSubdivisions();
+                // console.log(new Date().toUTCString() + " maxSubdivisions: " + maxSubdivisions);
+                // const balance = await provider.getBalance(LUNARTOKENADDRESS)
+                // console.log(new Date().toUTCString() + " balance: " + ethers.utils.formatEther(balance) + " ETH");
 
-                for (let i = 0; i < numPlots && i < 10; i++) {
+                const plots = [];
+                for (let i = 0; i < numPlots && i < 1000; i++) {
                   const plot = await lunarToken.plots(i);
                   console.log(new Date().toUTCString() + " " + i + " " + plot[0] + " " + ethers.utils.formatEther(plot[1]) + " " +
                     (plot[2] ? "       y" : "       n") + " " +
                     (plot[4] ? "       y" : "       n") + " " +
                     plot[3]);
+                  plots.push({ tokenId: i, owner: plot[0], price: ethers.utils.formatEther(plot[1]), forSale: plot[2], metadata: plot[3], disabled: plot[4] });
+                  this.plots = plots;
                 }
 
-                if (false) {
-                  for (let x = 0; x < 33; x++) {
-                    const row = [];
-                    for (let y = 0; y < 33; y++) {
-                      const owner = await new etheria.getOwner(x, y);
-                      row.push(owner);
-                      console.log("x: " + x + ", y: " + y + " => " + owner);
-                    }
-                    owners.push(row);
-                  }
-                  this.owners = owners;
-                  localStorage.setItem('etheriaOwners', JSON.stringify(owners));
-                }
+                // if (false) {
+                //   for (let x = 0; x < 33; x++) {
+                //     const row = [];
+                //     for (let y = 0; y < 33; y++) {
+                //       const owner = await new etheria.getOwner(x, y);
+                //       row.push(owner);
+                //       console.log("x: " + x + ", y: " + y + " => " + owner);
+                //     }
+                //     owners.push(row);
+                //   }
+                //   this.owners = owners;
+                //   localStorage.setItem('etheriaOwners', JSON.stringify(owners));
+                // }
 
 
 
