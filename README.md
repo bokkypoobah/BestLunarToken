@@ -14,8 +14,9 @@ scripts$ npm install --save ethers
 
 ## Scraped Data
 
-Results from executing [./scripts/01_scrapeData.js](./scripts/01_scrapeData.js):
+Results from executing [./scripts/01_scrapeData.js](./scripts/01_scrapeData.js) below.
 
+Use the URL https://lunartoken.co/detail/{tokenId} to view the plot.
 
 ```
 Floggy:scripts bok$ node 01_scrapeData.js
