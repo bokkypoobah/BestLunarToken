@@ -527,21 +527,38 @@
               if (network.chainId == 1) {
                 this.connected = true;
 
-                // const owners = [];
-                const etheriaHelper = new ethers.Contract(ETHERIAHELPERADDRESS, ETHERIAHELPERABI, provider);
-                console.log(new Date().toUTCString() + " Strating query");
-                const owners = await new etheriaHelper.owners();
-                console.log(new Date().toUTCString() + " owners: " + JSON.stringify(owners).substring(0, 100));
-                const names = await new etheriaHelper.names();
-                console.log(new Date().toUTCString() + " names: " + JSON.stringify(names).substring(0, 100));
-                const statuses = await new etheriaHelper.statuses();
-                console.log(new Date().toUTCString() + " statuses: " + JSON.stringify(statuses).substring(0, 100));
-                const lastFarms = await new etheriaHelper.lastFarms();
-                console.log(new Date().toUTCString() + " lastFarms: " + JSON.stringify(lastFarms).substring(0, 100));
+                const lunarToken = new ethers.Contract(LUNARTOKENADDRESS, LUNARTOKENABI, provider);
+                console.log(new Date().toUTCString() + " Starting query");
+                const symbol = await lunarToken.symbol();
+                console.log(new Date().toUTCString() + " symbol: " + symbol);
+                const name = await lunarToken.name();
+                console.log(new Date().toUTCString() + " name: " + name);
+                const numPlots = await lunarToken.numPlots();
+                console.log(new Date().toUTCString() + " numPlots: " + numPlots);
+                const totalOwned = await lunarToken.totalOwned();
+                console.log(new Date().toUTCString() + " totalOwned: " + totalOwned);
+                const totalPurchases = await lunarToken.totalPurchases();
+                console.log(new Date().toUTCString() + " totalPurchases: " + totalPurchases);
+                const initialPrice = await lunarToken.initialPrice();
+                console.log(new Date().toUTCString() + " initialPrice: " + ethers.utils.formatEther(initialPrice) + " ETH");
+                const feePercentage = await lunarToken.feePercentage();
+                console.log(new Date().toUTCString() + " feePercentage: " + feePercentage);
+                const tradingEnabled = await lunarToken.tradingEnabled();
+                console.log(new Date().toUTCString() + " tradingEnabled: " + tradingEnabled);
+                const subdivisionEnabled = await lunarToken.subdivisionEnabled();
+                console.log(new Date().toUTCString() + " subdivisionEnabled: " + subdivisionEnabled);
+                const maxSubdivisions = await lunarToken.maxSubdivisions();
+                console.log(new Date().toUTCString() + " maxSubdivisions: " + maxSubdivisions);
+                const balance = await provider.getBalance(LUNARTOKENADDRESS)
+                console.log(new Date().toUTCString() + " balance: " + ethers.utils.formatEther(balance) + " ETH");
 
-                // const etheria = new ethers.Contract(ETHERIAADDRESS, ETHERIAABI, provider);
-                // const locked = await new etheria.getLocked();
-                // console.log("locked: " + locked);
+                for (let i = 0; i < numPlots && i < 10; i++) {
+                  const plot = await lunarToken.plots(i);
+                  console.log(new Date().toUTCString() + " " + i + " " + plot[0] + " " + ethers.utils.formatEther(plot[1]) + " " +
+                    (plot[2] ? "       y" : "       n") + " " +
+                    (plot[4] ? "       y" : "       n") + " " +
+                    plot[3]);
+                }
 
                 if (false) {
                   for (let x = 0; x < 33; x++) {
