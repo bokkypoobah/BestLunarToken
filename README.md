@@ -21,18 +21,18 @@ Use the URL https://lunartoken.co/detail/{tokenId} to view the plot.
 ```
 Floggy:scripts bok$ node 01_scrapeData.js
 /Users/bok/Projects/BestLunarToken/scripts
-blockNumber: 12979807
+blockNumber: 12980561
 symbol: LUNA
 name: lunars
 numPlots: 400
 totalOwned: 400
-totalPurchases: 859
+totalPurchases: 873
 initialPrice: 0.01 ETH
 feePercentage: 10
 tradingEnabled: true
 subdivisionEnabled: false
 maxSubdivisions: 0
-balance: 1.486 ETH
+balance: 9.685 ETH
   # Owner                                         Price To Purchase For Sale Disabled Metadata
   0 0x4D928359E8556197f161F4927a928DFDE9c3d1a8                100.0        y        n
   1 0x913C1bE1953ad441777a6C1534D7c2bFb0dE90d6                 20.0        y        n
@@ -44,7 +44,7 @@ balance: 1.486 ETH
   7 0x913C1bE1953ad441777a6C1534D7c2bFb0dE90d6                 50.0        y        n
   8 0x913C1bE1953ad441777a6C1534D7c2bFb0dE90d6                100.0        y        n
   9 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                 19.0        y        n
- 10 0x28eD88c5F72C4e6DfC704f4CC71a4B7756BC4DbC                 40.0        y        n
+ 10 0x28eD88c5F72C4e6DfC704f4CC71a4B7756BC4DbC                 15.0        y        n
  11 0xbad2e817Af781B6F1573d65409ddEF24d9656f8b                 45.0        y        n
  12 0x28eD88c5F72C4e6DfC704f4CC71a4B7756BC4DbC                500.0        y        n
  13 0x0031Fe1B496d4DFbda777a3E2270de73192008EA                100.0        y        n
@@ -54,7 +54,7 @@ balance: 1.486 ETH
  17 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                 17.0        y        n
  18 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                 18.0        y        n
  19 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                 19.0        y        n
- 20 0x9634445e293A87aB77Ca3Cf5B43da94AaBc544B6                 10.0        n        n 20
+ 20 0x9634445e293A87aB77Ca3Cf5B43da94AaBc544B6                  7.5        y        n 20
  21 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                 21.0        y        n
  22 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                 22.0        y        n
  23 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                 23.0        y        n
@@ -77,7 +77,7 @@ balance: 1.486 ETH
  40 0x28b8d4f7516a112E2E2FD462293a1C27CdE327a7                 10.0        y        n
  41 0xaee2Ae13EBf81d38df5a9Ed7013E80EA3f72e39b                 25.0        y        n
  42 0xF38d1b01FdFCEEcb8946bC08B0a7207C19449f49                100.0        y        n
- 43 0x28eD88c5F72C4e6DfC704f4CC71a4B7756BC4DbC                 10.0        y        n THE BEST VIEW IS HERE ! :D LMC4EVER
+ 43 0x40b62A281a9A32BDa51433A827236F7C9CBf3E6C                  9.0        y        n to the moon
  44 0xF38d1b01FdFCEEcb8946bC08B0a7207C19449f49                 10.0        y        n
  45 0x913C1bE1953ad441777a6C1534D7c2bFb0dE90d6                 45.0        y        n
  46 0x28eD88c5F72C4e6DfC704f4CC71a4B7756BC4DbC                  7.0        y        n
@@ -89,7 +89,7 @@ balance: 1.486 ETH
  52 0x913C1bE1953ad441777a6C1534D7c2bFb0dE90d6                 50.0        y        n
  53 0x1d3DB45F912c74De554409c1aD0D27DBCb26b726                 40.0        y        n
  54 0x8B195969942e8ad39819a733E1C3be242B9C6b81                 15.0        y        n
- 55 0x9634445e293A87aB77Ca3Cf5B43da94AaBc544B6                 10.0        n        n 55
+ 55 0x9634445e293A87aB77Ca3Cf5B43da94AaBc544B6                  5.5        y        n 55
  56 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                100.0        y        n
  57 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 10.0        y        n
  58 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 50.0        y        n
@@ -111,15 +111,15 @@ balance: 1.486 ETH
  74 0x0a828ecF73f8FcF38B39CeB131777A9eD4203d33                100.0        y        n
  75 0x658A06594Cf3a3dD55F03e8520D89ca03B6C741d                 69.0        y        n eden>haven
  76 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 10.0        y        n
- 77 0xEf9d53437563434d2B24C15563799247F08ABAe3                100.0        y        n
- 78 0x5d1A657411F6975702d3F022990207D7cEB3d50B                 5.95        y        n
+ 77 0xEf9d53437563434d2B24C15563799247F08ABAe3                 77.0        y        n
+ 78 0x5d1A657411F6975702d3F022990207D7cEB3d50B                25.95        y        n
  79 0xc1165124be8DC53A3826A1AA1B6643e9138d167C                 10.0        y        n
  80 0xbCD012A8953B4AFAa1A6FfeE5330088396c87E7d                  8.0        y        n
  81 0x2E70cC8767d4a1B2E19C9830551C3F25a03aE796                 10.0        y        n
  82 0x737d0100C95761d9b891FAFbAcD9F036C856A5cf                 25.0        y        n
  83 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                100.0        y        n
  84 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 50.0        y        n
- 85 0x0F3f647e19ddf45D1a963527Db2Af07c8175Db20                 6.76        y        n
+ 85 0x0F3f647e19ddf45D1a963527Db2Af07c8175Db20                  6.0        y        n
  86 0x1c4203Db716a122AFF5120203268113E8B471F0E                100.0        y        n
  87 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 50.0        y        n
  88 0x913C1bE1953ad441777a6C1534D7c2bFb0dE90d6                 88.0        y        n
@@ -137,12 +137,12 @@ balance: 1.486 ETH
 100 0xbCD012A8953B4AFAa1A6FfeE5330088396c87E7d                100.0        y        n
 101 0x6eF1a2c218FAE8f60469ef06f4dbA00555da4C6a                100.0        y        n
 102 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 50.0        y        n
-103 0x3fce27Ef75c4C095dD6C3f0c04De876A85c5ab13                  9.0        y        n
+103 0xCf778E06fC8aab30938341fb6a1F435c7BA862eC                 15.0        y        n
 104 0xA9A7411Cba7C2ffDe616623a05036875D9Ba53b0                 15.0        y        n
 105 0x6327343B3a12Fbd25488Da0e82Bd4512aD080423                 35.0        y        n
 106 0x205C066D2c95f279d5F95997D4D5796251A3cCcD                 20.0        y        n
 107 0xd4FA4e4B6fEf6edb841D3cb1b76eB93586f5ae42                107.0        y        n
-108 0x382b315AcB0BA72aA7034319Dc7Ee3fFFda98a9e                 6.69        y        n
+108 0x382b315AcB0BA72aA7034319Dc7Ee3fFFda98a9e                18.99        y        n
 109 0x348fc0DFBE199Bb11A9fe17a1733ad87Aba6aFBD                 20.0        y        n
 110 0x3a0E6b374FCC051172aB4fCC3599F245BBAf02a2                 15.0        y        n
 111 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                 11.0        y        n
@@ -159,14 +159,14 @@ balance: 1.486 ETH
 122 0xc2521Db7fc8160ad24eEB34B2468aE86B318e9e1                  9.9        y        n
 123 0xD33e6533bf8614e7f6C56a7B84B1cCD2189C3807                 99.0        y        n 1, 2, 3... to the MOOOOON
 124 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 50.0        y        n
-125 0xE81175546F554ca6cEB63b142f27de7557C5Bf62                  0.0        n        n ""
+125 0x4DbE965AbCb9eBc4c6E9d95aEb631e5B58E70d5b                 10.0        y        n ""
 126 0xeA31da4c12Aa381a336ED6Db675d161eE3F7d4Ae                 33.0        y        n
 127 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                100.0        y        n
 128 0xc5479fEcE226A3b62c0B8599252A58237359a652                6.942        y        n
 129 0x8dB7147b554B739058E74C01042d2aEA44505E2F                 10.0        y        n
 130 0xc61CC53572f07062731b21685F07fb1d71495fC9                 36.0        y        n
-131 0x736011B7d04d8a014EFdAe6a653E3405f3CDC720                  7.9        y        n
-132 0xE81175546F554ca6cEB63b142f27de7557C5Bf62                  0.0        n        n
+131 0x53f2a3De31c054f32a5AC5bF83cDE29350035e46                 18.0        y        n
+132 0x161079e42cfbcde6ada25428398234E3027D82c9               1000.0        y        n
 133 0xFD89d3831C6973fB5BA0b82022142b54AD9e8d46                 15.0        y        n
 134 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                100.0        y        n
 135 0x2fd09E6ce3aa2420B860ec9614C4cdea280DB327               5000.0        y        n BokkyPooBah wuz here! 🙀🙀🙀
@@ -190,7 +190,7 @@ balance: 1.486 ETH
 153 0x28Acc1227a18a14E73FBC9c115A1dB77e8dD13a1                 15.0        y        n
 154 0x980F937Ad2Eaf2a35fE8bB55690378E4B65a4ae4                500.0        y        n
 155 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                100.0        y        n
-156 0xeebFd0aE2CE773dB3dADAd8D51Ad59eC11567F16                  9.0        y        n
+156 0xeebFd0aE2CE773dB3dADAd8D51Ad59eC11567F16                  6.0        y        n
 157 0x28b8d4f7516a112E2E2FD462293a1C27CdE327a7                133.0        y        n
 158 0x3AF4a3D023A34B3111e574B5412E5E3288b3CfD7                 88.0        y        n
 159 0xCE94d2192f4ccEe351497EDC82DB17d859FCA031                200.0        y        n
@@ -223,7 +223,7 @@ balance: 1.486 ETH
 186 0x35A80237Af795C23c5fa53464dA5e2a95dE4Be38                 15.0        y        n
 187 0x913C1bE1953ad441777a6C1534D7c2bFb0dE90d6                 25.0        y        n
 188 0x35A80237Af795C23c5fa53464dA5e2a95dE4Be38                 15.0        y        n
-189 0x35A80237Af795C23c5fa53464dA5e2a95dE4Be38                 15.0        y        n
+189 0x5bD2843C229165d36Ed9fA8558C4Fac9d2fCd449                288.0        y        n
 190 0x35A80237Af795C23c5fa53464dA5e2a95dE4Be38                 15.0        y        n
 191 0x041E1FE38d7dE3a10ED9291C44435aE29fb0d2a8                 10.0        y        n
 192 0xF38d1b01FdFCEEcb8946bC08B0a7207C19449f49                 10.0        y        n
@@ -261,7 +261,7 @@ balance: 1.486 ETH
 224 0xd91846925Bc182c61C1615d303Bb78b1C28e957B                100.0        y        n
 225 0x076F7257f0Cb54fc1Bdb41FEbaE5585C36cB1E24                 30.0        y        n
 226 0xd9d23DB5632262033ad9F73aC8FBBa8d76d00188                 20.0        y        n
-227 0x8dB7147b554B739058E74C01042d2aEA44505E2F                 20.0        y        n
+227 0x8dB7147b554B739058E74C01042d2aEA44505E2F                 15.0        y        n
 228 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 25.0        y        n
 229 0xAb01D4895b802c38Eee7553bb52A4160CFca2878                 10.0        y        n
 230 0xF38d1b01FdFCEEcb8946bC08B0a7207C19449f49                 10.0        y        n
@@ -278,12 +278,12 @@ balance: 1.486 ETH
 241 0xbD159A643DE7D8177FB9e2073d13f5AC055aad21                100.0        y        n
 242 0xF38d1b01FdFCEEcb8946bC08B0a7207C19449f49                 10.0        y        n
 243 0x12ABfc805CBb1EF7a898a33F43301BbD24A5d8d2                100.0        y        n
-244 0x62c72c74c8f8d0c94FF4E43293b3200E79e3712e                 20.0        y        n
+244 0xE81175546F554ca6cEB63b142f27de7557C5Bf62                  0.0        n        n
 245 0x6db296A6721212B43474FcBb5CBcE4736299aCFb                 55.0        y        n
-246 0x28eD88c5F72C4e6DfC704f4CC71a4B7756BC4DbC                100.0        y        n
+246 0x28eD88c5F72C4e6DfC704f4CC71a4B7756BC4DbC                 30.0        y        n
 247 0x3C8cbD613857965267bcd4bdEC7b794Dd53969A0                 45.0        y        n
 248 0xdD9d7dc506A8F362df016fE67b95B18365bF0c16                  8.0        y        n
-249 0xe4d3BA817b2112D0bD244df88b29E58660e3Ce70                 5.95        y        n Description
+249 0xD7a4FCD99f0f5676c09728dD9F846FaeB6e72F8E                 10.0        y        n Description
 250 0x152474eb821fB45bd2389345446dB295b7e8f493 99999999999999999999999999999999999999999999999999999.0        y        n
 251 0xA186727FDAF90cD7d9972572E32C618Ce04206f8                 20.0        y        n
 252 0xA9A7411Cba7C2ffDe616623a05036875D9Ba53b0                 15.0        y        n
@@ -299,46 +299,46 @@ balance: 1.486 ETH
 262 0xEF30fA2138A725523451688279b11216B0505E98                 25.0        y        n
 263 0x3a0E6b374FCC051172aB4fCC3599F245BBAf02a2                 10.5        y        n
 264 0x5bD2843C229165d36Ed9fA8558C4Fac9d2fCd449                 99.0        y        n
-265 0xc52f437506069D5A678b3D11cc9919Efdb8C48FB                 50.0        y        n
+265 0xc52f437506069D5A678b3D11cc9919Efdb8C48FB                 9.67        y        n
 266 0xa69303D076dFb54d50589C4D018205a409Aa4293                 20.0        y        n
 267 0xF38d1b01FdFCEEcb8946bC08B0a7207C19449f49                 10.0        y        n
 268 0xd4FA4e4B6fEf6edb841D3cb1b76eB93586f5ae42                18.69        y        n
-269 0xCfD0B8eca784AA7262A05263486F6B798Fb70103                 9.69        y        n
+269 0xCfD0B8eca784AA7262A05263486F6B798Fb70103                 9.97        y        n
 270 0x2938b2a7EbF9a59645E39d51ec5eCA2869D6C53D                  5.5        y        n
 271 0x89653C7156CCc49be0E0B5Ab63F2848296Bb1a8d                 15.0        y        n
 272 0xd9c3415Bf8600f007A1b4199DF967C25A3E00EeA                  9.9        y        n
 273 0xF6775a6AC9167e5d98B0060b4F29DB285d0e2C5f                100.0        y        n
 274 0x439AD5D270fB0A01b7B0c95646ccCD6C54705F13                 15.0        y        n
 275 0x62A5E43716c34Ffe17F75A5e71F12f0686a8F772                 50.0        y        n
-276 0xD8924feA04dd208BC2303F9c4D1Bc1E4F690F2AF                  7.0        y        n
+276 0xD8924feA04dd208BC2303F9c4D1Bc1E4F690F2AF                 9.69        y        n
 277 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                100.0        y        n
 278 0xd158637f7a7bAC0E16e83e532b8d01edc77c4797                 68.0        y        n
 279 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 50.0        y        n
 280 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 50.0        y        n
 281 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                 28.0        y        n
 282 0x2D0e9e8197c541704EAd0AEB35Ef5F03dC35bC6D                  9.5        y        n
-283 0x8dB7147b554B739058E74C01042d2aEA44505E2F                 10.1        y        n
-284 0x16FfE3938B69132c72A5b0250708792DB72971B4                  5.0        y        n
+283 0x8dB7147b554B739058E74C01042d2aEA44505E2F                 20.0        y        n
+284 0x16FfE3938B69132c72A5b0250708792DB72971B4                 88.0        y        n
 285 0xEdae46bc4357e4619397EF4E121fc3067D931CD1                 30.0        y        n
 286 0xd8D3d8ab22E30c5402AB2A2E216a4A53F4e09e9E                12.88        y        n Tycho
 287 0xF4AA47B22F93A1a9e46F794100587A32505F2E17                  6.5        y        n
 288 0x646D1106D0427C76B066335037e0BB7d33B78a89                 30.0        y        n Elons Plot #1
 289 0xC1Dd48CFC8A56eDBb9040140B2e538C80375e3De                 20.0        y        n
 290 0xEdae46bc4357e4619397EF4E121fc3067D931CD1                 30.0        y        n
-291 0x2938b2a7EbF9a59645E39d51ec5eCA2869D6C53D                  5.5        y        n
+291 0x463044920293c9b21d502578a0bdEa049b777322                 25.0        y        n
 292 0xF38d1b01FdFCEEcb8946bC08B0a7207C19449f49                 10.0        y        n
-293 0xEc7B7a7D8e5427e38C1cf57488c1d652924FF65A                 4.98        y        n
+293 0x40b62A281a9A32BDa51433A827236F7C9CBf3E6C                  6.5        y        n
 294 0x53c760CB4eAcBEa81682f6E09B674B249b09F273                100.0        y        n
 295 0x634178Ac085102ba9B8073b010E869702b38952E                 15.0        y        n
 296 0xF6775a6AC9167e5d98B0060b4F29DB285d0e2C5f                100.0        y        n
-297 0x9857a977d23447aD63C6B37C85F561DFde5c3D98                  4.9        y        n
+297 0x301e817c1b814623fF8B84114F1E01af5A5CA770                 20.0        y        n
 298 0xF6775a6AC9167e5d98B0060b4F29DB285d0e2C5f                100.0        y        n
 299 0x34E8E8349D89E0ab5c7381c9149C0a23e328C6DC                100.0        y        n
 300 0x913C1bE1953ad441777a6C1534D7c2bFb0dE90d6                300.0        y        n
 301 0x9A32b1A10504489F9B88106AcEC79c672630158c               1000.0        y        n
 302 0x9A32b1A10504489F9B88106AcEC79c672630158c               1000.0        y        n
 303 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 50.0        y        n
-304 0x8dB7147b554B739058E74C01042d2aEA44505E2F                 10.0        y        n
+304 0x8dB7147b554B739058E74C01042d2aEA44505E2F                 30.0        y        n
 305 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 10.0        y        n
 306 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 50.0        y        n
 307 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 50.0        y        n
@@ -373,11 +373,11 @@ balance: 1.486 ETH
 336 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 10.0        y        n
 337 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 10.0        y        n
 338 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 50.0        y        n
-339 0x16FfE3938B69132c72A5b0250708792DB72971B4                 88.0        y        n
+339 0x16FfE3938B69132c72A5b0250708792DB72971B4                  6.0        y        n
 340 0x700f8BCeb1d06fFA88606dEC8ECc5adD5AF852A4                 50.0        y        n
 341 0xB6e13Db944e6DDf1BA978CEB7AaE5E074042a1Ec                 15.0        y        n
 342 0xF38d1b01FdFCEEcb8946bC08B0a7207C19449f49                 10.0        y        n
-343 0x0F3f647e19ddf45D1a963527Db2Af07c8175Db20                  6.8        y        n
+343 0x0F3f647e19ddf45D1a963527Db2Af07c8175Db20                  5.9        y        n
 344 0x6FF51bC28c45EF86D44C707CC320C0a9a0432a9F                 10.0        y        n
 345 0x624855EA1a0F31888fD25132f3222749BD184039                 15.0        y        n
 346 0x65a7C3Cb6d1C3cEf361063C57936d9d4c9D7bCAB                 15.0        y        n
@@ -390,12 +390,12 @@ balance: 1.486 ETH
 353 0x54F58B5fB004512D49Cf70B82fCed1c076c76509                 75.0        y        n
 354 0x8568E1A8082B442aE9BE089A3b3888a25Ae55f8C                 20.0        y        n
 355 0xf22ab2E1bbad2219d2F220cDCd317E223e172D61                  8.0        y        n
-356 0x0F763341b448bb0f02370F4037FE4A2c84c9283f                  8.0        y        n
+356 0x0F763341b448bb0f02370F4037FE4A2c84c9283f                 10.0        y        n
 357 0x1c4203Db716a122AFF5120203268113E8B471F0E                100.0        y        n
 358 0xf97664376416E9379f2354DB444BFE3f00B6936b                 25.0        y        n
-359 0x16FfE3938B69132c72A5b0250708792DB72971B4                 88.0        y        n
+359 0x9b42BDCDeffC1481E2881399AA12f86c374EbF63                 12.0        y        n
 360 0xF6d61EcC25aAA63cF75E263870BBf3521E8C060E                 14.0        y        n Elon was here
-361 0x29C3f59C7C864897b39a0FbEFA128f55fF1f8f00                 5.99        y        n
+361 0x161079e42cfbcde6ada25428398234E3027D82c9                100.0        y        n
 362 0x82629d45B413aFbAE1F488968eC1143a663227c2                 20.0        y        n <LUCKY-LOOKOUT>
 363 0xF6d61EcC25aAA63cF75E263870BBf3521E8C060E                 50.0        y        n
 364 0x191E79f3031a6523BF96b8571469D6d54bE8afF2                 50.0        y        n
@@ -405,11 +405,11 @@ balance: 1.486 ETH
 368 0x4D928359E8556197f161F4927a928DFDE9c3d1a8                 42.0        y        n
 369 0x439AD5D270fB0A01b7B0c95646ccCD6C54705F13                 15.0        y        n
 370 0x4D928359E8556197f161F4927a928DFDE9c3d1a8                 42.0        y        n
-371 0x37091A30FFFCC3E664c8641544B8D882cAE68438                  8.7        y        n
+371 0x37091A30FFFCC3E664c8641544B8D882cAE68438                 13.5        y        n
 372 0xc9BD97Aa2Fec5335737c6Cae8c6417D1E00CcFb9                 9.69        y        n
 373 0x5dF3F15779f5e2855CF14D09C4D184b7885B46aF                107.0        y        n
-374 0x0F3f647e19ddf45D1a963527Db2Af07c8175Db20                  6.8        y        n
-375 0xE9B80B4cF85d7709583DFF27c1F51B289Cd1E152                 10.0        y        n ""
+374 0x0F3f647e19ddf45D1a963527Db2Af07c8175Db20                  5.5        y        n
+375 0x9857a977d23447aD63C6B37C85F561DFde5c3D98                 5.39        y        n the rarest lunar sector
 376 0x229748C17556e8EbBb47EF3584673CA484eAe909                100.0        y        n Peak Moon
 377 0x7a4FD0f8d775c0cb496b231D7F73fC89b74D7E1A                300.0        y        n
 378 0x28eD88c5F72C4e6DfC704f4CC71a4B7756BC4DbC                 50.0        y        n
@@ -424,14 +424,14 @@ balance: 1.486 ETH
 387 0x636e31ADee132E4AC5697eee40D7f9348AE7a15E                200.0        y        n
 388 0x1d3DB45F912c74De554409c1aD0D27DBCb26b726                 50.0        y        n
 389 0x1164fe7a76D22EAA66f6A0aDcE3E3a30d9957A5f                 50.0        y        n
-390 0x15C1c13BA9effce6397357db476fD4bebF4D43Fc              5.66669        y        n
+390 0x15C1c13BA9effce6397357db476fD4bebF4D43Fc              5.42069        y        n Zvezda
 391 0x7B0B92Ce3410D0E645c498fa137F83e13A975034                 50.0        y        n
 392 0x495AAe1D882370802a5004056D9D6e0Af540E091                 15.0        y        n
 393 0x7760848E31e1C8610bF55Fcd9345fEe8e10884b6                 30.0        y        n
-394 0x28eD88c5F72C4e6DfC704f4CC71a4B7756BC4DbC                 30.0        y        n
+394 0x28eD88c5F72C4e6DfC704f4CC71a4B7756BC4DbC                 10.0        y        n prime real estate bish
 395 0x54F58B5fB004512D49Cf70B82fCed1c076c76509                 50.0        y        n
 396 0x1563547DD0c62A802779bf55af1184E65BB1a6E5                 9.95        y        n
 397 0xbf67e713ddEf50496c6F27C41Eaeecee3A9FA063                 50.0        y        n
-398 0x28eD88c5F72C4e6DfC704f4CC71a4B7756BC4DbC                 50.0        y        n
+398 0x28eD88c5F72C4e6DfC704f4CC71a4B7756BC4DbC                 15.0        y        n
 399 0x6327343B3a12Fbd25488Da0e82Bd4512aD080423              37.7777        y        n 
 ```
