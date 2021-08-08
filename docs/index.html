@@ -55,7 +55,7 @@
             </b-navbar-brand>
             <div v-for="item in getSelectedShowcase">
               <b-link :href="'https://www.bastardganpunks.club/v2/' + item.tokenId" target="_blank">
-                <b-avatar rounded="sm" variant="light" size="3.0rem" :src="'./images/' + item.image" v-b-popover.hover.bottom="'Bokky\'s Blessed Bastard #' + item.tokenId" class="ml-2"></b-avatar>
+                <b-avatar rounded="sm" variant="light" size="3.0rem" :src="'./images/' + item.image" v-b-popover.hover.bottom="'Bokky\'s Blessed Bastard #' + item.tokenId + '. Reminder: Smoking kills!'" class="ml-2"></b-avatar>
               </b-link>
             </div>
             <b-navbar-nav class="ml-auto">
