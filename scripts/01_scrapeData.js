@@ -17,6 +17,8 @@ async function doIt() {
   console.log("symbol: " + symbol);
   const name = await lunarToken.name();
   console.log("name: " + name);
+  const totalSupply = await lunarToken.totalSupply();
+  console.log("totalSupply: " + totalSupply);
   const numPlots = await lunarToken.numPlots();
   console.log("numPlots: " + numPlots);
   const totalOwned = await lunarToken.totalOwned();

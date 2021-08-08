@@ -533,9 +533,46 @@
               const network = await provider.getNetwork();
               if (network.chainId == 1) {
                 this.connected = true;
-
-                const lunarToken = new ethers.Contract(LUNARTOKENADDRESS, LUNARTOKENABI, provider);
                 console.log(new Date().toUTCString() + " Starting query");
+
+                const lunarTokenHelper = new ethers.Contract(LUNARTOKENHELPERADDRESS, LUNARTOKENHELPERABI, provider);
+                const tokenInfo = await lunarTokenHelper.tokenInfo();
+                console.log(new Date().toUTCString() + " tokenInfo: " + JSON.stringify(tokenInfo));
+                // const name = await lunarToken.name();
+                // console.log(new Date().toUTCString() + " name: " + name);
+                // const numPlots = await lunarToken.numPlots();
+                // console.log(new Date().toUTCString() + " numPlots: " + numPlots);
+
+                // function plots(uint from, uint to) external view returns(
+                // uint[] memory _tokenIds, address[] memory _owners, uint[] memory _prices,
+                // bool[] memory _forSales, string[] memory _metadatas, bool[] memory _disableds/*, uint8[] memory _subdivisions, uint[] memory _parentIds*/) {
+
+                const numPlots = tokenInfo[2][0];
+                console.log(new Date().toUTCString() + " numPlots: " + numPlots);
+
+                const plots = await lunarTokenHelper.plots(0, numPlots.toString());
+                console.log(new Date().toUTCString() + " plots: " + JSON.stringify(plots));
+                const _plots = [];
+                this.plots = [];
+                for (let i = 0; i < plots[0].length && i < 3000; i++) {
+                  const plotIndex = plots[0][i];
+                  const plotOwner = plots[1][i];
+                  const plotPrice = plots[2][i];
+                  const plotForSale = plots[3][i] ? "y" : "n";
+                  const plotMetadata = plots[4][i];
+                  const plotDisabled = plots[5][i] ? "y" : "n";
+                  console.log(i + " " + plotIndex + " " + plotOwner);
+                  // console.log(JSON.stringify(plot));
+                //   console.log(new Date().toUTCString() + " " + i + " " + plot[0] + " " + ethers.utils.formatEther(plot[1]) + " " +
+                //     (plot[2] ? "       y" : "       n") + " " +
+                //     (plot[4] ? "       y" : "       n") + " " +
+                //     plot[3]);
+                  _plots.push({ tokenId: i, owner: plotOwner, price: ethers.utils.formatEther(plotPrice), forSale: plotForSale , metadata: plotMetadata, disabled: plotDisabled  });
+                }
+                this.plots = _plots;
+
+                /*
+                const lunarToken = new ethers.Contract(LUNARTOKENADDRESS, LUNARTOKENABI, provider);
                 // const symbol = await lunarToken.symbol();
                 // console.log(new Date().toUTCString() + " symbol: " + symbol);
                 // const name = await lunarToken.name();
@@ -559,16 +596,17 @@
                 // const balance = await provider.getBalance(LUNARTOKENADDRESS)
                 // console.log(new Date().toUTCString() + " balance: " + ethers.utils.formatEther(balance) + " ETH");
 
-                const plots = [];
+                const _plots = [];
                 for (let i = 0; i < numPlots && i < 1000; i++) {
                   const plot = await lunarToken.plots(i);
                   console.log(new Date().toUTCString() + " " + i + " " + plot[0] + " " + ethers.utils.formatEther(plot[1]) + " " +
                     (plot[2] ? "       y" : "       n") + " " +
                     (plot[4] ? "       y" : "       n") + " " +
                     plot[3]);
-                  plots.push({ tokenId: i, owner: plot[0], price: ethers.utils.formatEther(plot[1]), forSale: plot[2], metadata: plot[3], disabled: plot[4] });
-                  this.plots = plots;
+                  _plots.push({ tokenId: i, owner: plot[0], price: ethers.utils.formatEther(plot[1]), forSale: plot[2], metadata: plot[3], disabled: plot[4] });
+                  this.plots = _plots;
                 }
+                */
 
                 // if (false) {
                 //   for (let x = 0; x < 33; x++) {
