@@ -97,7 +97,7 @@
               <b-tab title="Owners">
                 <b-card-text>
                   <div v-if="plots.length == 0">
-                    Click CONNECT WALLET to view the data. Source code at <b-link :href="'https://github.com/bokkypoobah/BestLunarToken'" target="_blank">https://github.com/bokkypoobah/BestLunarToken</b-link>
+                    Click CONNECT WALLET to view the LunarToken market data...
                   </div>
 
                   <!-- {{ plots }} -->
@@ -122,6 +122,24 @@
                   </b-row>
                 </b-card-text> -->
               </b-tab>
+
+              <b-tab title="Info">
+                <b-card-text>
+                  <p>
+                    Original website: <b-link :href="'https://lunartoken.co/'" target="_blank">https://lunartoken.co/</b-link>
+                  </p>
+                  <p>
+                    This website: <b-link :href="'https://bokkypoobah.github.io/BestLunarToken/'" target="_blank">https://bokkypoobah.github.io/BestLunarToken/</b-link>
+                  </p>
+                  <p>
+                    LunarToken Smart Contract: <b-link :href="'https://etherscan.io/address/0x43fb95c7afA1Ac1E721F33C695b2A0A94C7ddAb2#code'" target="_blank">https://etherscan.io/address/0x43fb95c7afA1Ac1E721F33C695b2A0A94C7ddAb2</b-link>
+                  </p>
+                  <p>
+                    LunarTokenHelper Smart Contract: <b-link :href="'https://etherscan.io/address/0x9809dbeb9e030eb296c7c410758310dfcb1ef3dd#code'" target="_blank">https://etherscan.io/address/0x9809dbeb9e030eb296c7c410758310dfcb1ef3dd</b-link>
+                  </p>
+                </b-card-text>
+              </b-tab>
+
 
               <!--
               <b-tab title="SEXY BASTARDS">
