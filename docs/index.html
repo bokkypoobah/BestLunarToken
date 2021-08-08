@@ -625,8 +625,6 @@
                 this.plots = _plots;
 
                 ensMap[this.account.toLowerCase()] = this.account;
-                ensMap["0x000000000000000000000000000000000000dEaD".toLowerCase()] = "0DEAD_";
-                ensMap["0xE81175546F554ca6cEB63b142f27de7557C5Bf62".toLowerCase()] = "WLUNA_";
                 let addresses = Object.keys(ensMap);
                 console.log(new Date().toUTCString() + " addresses: " + JSON.stringify(addresses));
 
@@ -647,6 +645,8 @@
                   }
                   console.log(new Date().toUTCString() + " ensMap: " + JSON.stringify(ensMap));
                 }
+                ensMap["0x000000000000000000000000000000000000dEaD".toLowerCase()] = "0DEAD_";
+                ensMap["0xE81175546F554ca6cEB63b142f27de7557C5Bf62".toLowerCase()] = "WLUNA_";
                 this.ensMap = ensMap;
 
                 /*
