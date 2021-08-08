@@ -102,7 +102,7 @@
 
                   <!-- {{ plots }} -->
 
-                  <b-table small :items="plots" responsive="sm">
+                  <b-table small :fields="fields" :items="plots" responsive="sm">
                   </b-table>
                 </b-card-text>
                 <!-- <b-card-text>
@@ -368,10 +368,12 @@
             { value: 'list', text: 'LIST' },
           ],
           fields: [
-            { key: 'tokenId', label: 'TOKENID' },
-            { key: 'image', label: 'BASTARD' },
-            { key: 'description', label: 'LYRICS' },
-            { key: 'attributes', label: 'ATTRIBUTES' },
+            { key: 'tokenId', label: 'TokenId', sortable: true },
+            { key: 'owner', label: 'Owner', sortable: true },
+            { key: 'forSale', label: 'ForSale', sortable: true },
+            { key: 'disabled', label: 'Disabled', sortable: true },
+            { key: 'price', label: 'Price', sortable: true },
+            { key: 'metadata', label: 'Metadata', sortable: true },
           ],
           ownedTokenFields: [
             { key: 'i', label: '#' },
@@ -586,12 +588,7 @@
                   const plotMetadata = plots[4][i];
                   const plotDisabled = plots[5][i] ? "y" : "n";
                   console.log(i + " " + plotIndex + " " + plotOwner);
-                  // console.log(JSON.stringify(plot));
-                //   console.log(new Date().toUTCString() + " " + i + " " + plot[0] + " " + ethers.utils.formatEther(plot[1]) + " " +
-                //     (plot[2] ? "       y" : "       n") + " " +
-                //     (plot[4] ? "       y" : "       n") + " " +
-                //     plot[3]);
-                  _plots.push({ tokenId: i, owner: plotOwner, price: ethers.utils.formatEther(plotPrice), forSale: plotForSale , metadata: plotMetadata, disabled: plotDisabled  });
+                  _plots.push({ tokenId: i, owner: plotOwner, forSale: plotForSale, disabled: plotDisabled, price: ethers.utils.formatEther(plotPrice), metadata: plotMetadata });
                 }
                 this.plots = _plots;
 
@@ -647,16 +644,6 @@
                 // }
 
 
-
-                //
-                //
-                // const banana = new ethers.Contract(BASTARDADDRESS, BASTARDABI, provider);
-                // const tokensOfOwner = await banana.tokensOfOwner(this.account);
-                // const tokensOwned = {};
-                // for (let i in tokensOfOwner) {
-                //   let t = tokensOfOwner[i];
-                //   tokensOwned[t.toString()] = true;
-                // }
                 // this.tokensOwned = tokensOwned;
                 // // console.log("bastardsOwned: " + JSON.stringify(tokensOwned, null, 2));
                 // localStorage.setItem('bastardsOwned', JSON.stringify(tokensOwned));
