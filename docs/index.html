@@ -100,8 +100,6 @@
                     Click CONNECT WALLET to view the LunarToken market data...
                   </div>
 
-                  <!-- {{ plots }} -->
-
                   <b-table small :fields="fields" :items="plots" responsive="sm">
                     <template #cell(tokenId)="data">
                       <b-link :href="'https://lunartoken.co/detail/' + data.item.tokenId" v-b-popover.hover="'View plot in LunarToken.co'" target="_blank">
@@ -588,6 +586,7 @@
               if (network.chainId == 1) {
                 this.connected = true;
                 console.log(new Date().toUTCString() + " Starting query");
+                const timestamp = parseInt(new Date() / 1000);
 
                 const lunarTokenHelper = new ethers.Contract(LUNARTOKENHELPERADDRESS, LUNARTOKENHELPERABI, provider);
                 const tokenInfo = await lunarTokenHelper.tokenInfo();
@@ -626,8 +625,7 @@
 
                 ensMap[this.account.toLowerCase()] = this.account;
                 let addresses = Object.keys(ensMap);
-                console.log(new Date().toUTCString() + " addresses: " + JSON.stringify(addresses));
-
+                // console.log(new Date().toUTCString() + " addresses: " + JSON.stringify(addresses));
                 const ensReverseRecordsContract = new ethers.Contract(ENSREVERSERECORDSADDRESS, ENSREVERSERECORDSABI, provider);
                 const ENSOWNERBATCHSIZE = 500;
                 for (let i = 0; i < addresses.length; i += ENSOWNERBATCHSIZE) {
@@ -636,18 +634,19 @@
                   const allNames = await ensReverseRecordsContract.getNames(batch);
                   console.log(new Date().toUTCString() + " allNames: " + JSON.stringify(allNames));
                   // NOT CHECKING ADDRESSES AS THE ADDRESSES CAME FROM A CONTRACT. AND account. const validNames = allnames.filter((n) => normalize(n) === n );
-
                   for (let j = 0; j < batch.length; j++) {
                     const address = batch[j];
                     const name = allNames[j];
                     ensMap[address] = name != null && name.length > 0 ? name : address;
                     // const normalized = normalize(address);
                   }
-                  console.log(new Date().toUTCString() + " ensMap: " + JSON.stringify(ensMap));
+                  // console.log(new Date().toUTCString() + " ensMap: " + JSON.stringify(ensMap));
                 }
                 ensMap["0x000000000000000000000000000000000000dEaD".toLowerCase()] = "0DEAD_";
                 ensMap["0xE81175546F554ca6cEB63b142f27de7557C5Bf62".toLowerCase()] = "WLUNA_";
                 this.ensMap = ensMap;
+
+                localStorage.setItem('bestLunarTokenCache', JSON.stringify({ plots: plots, ensMap: ensMap, timestamp: timestamp }));
 
                 /*
                 const lunarToken = new ethers.Contract(LUNARTOKENADDRESS, LUNARTOKENABI, provider);
@@ -686,24 +685,6 @@
                 }
                 */
 
-                // if (false) {
-                //   for (let x = 0; x < 33; x++) {
-                //     const row = [];
-                //     for (let y = 0; y < 33; y++) {
-                //       const owner = await new etheria.getOwner(x, y);
-                //       row.push(owner);
-                //       console.log("x: " + x + ", y: " + y + " => " + owner);
-                //     }
-                //     owners.push(row);
-                //   }
-                //   this.owners = owners;
-                //   localStorage.setItem('etheriaOwners', JSON.stringify(owners));
-                // }
-
-
-                // this.tokensOwned = tokensOwned;
-                // // console.log("bastardsOwned: " + JSON.stringify(tokensOwned, null, 2));
-                // localStorage.setItem('bastardsOwned', JSON.stringify(tokensOwned));
               } else {
                 alert("Please switch to the Ethereum mainnet and refresh");
               }
@@ -758,12 +739,12 @@
           },
         },
         mounted() {
-          if (localStorage.getItem('bastardsOwned')) {
-            this.tokensOwned = JSON.parse(localStorage.getItem('bastardsOwned'));
-          }
-          if (localStorage.getItem('etheriaOwners')) {
-            this.owners = JSON.parse(localStorage.getItem('etheriaOwners'));
-          }
+          // if (localStorage.getItem('bestLunarTokenCache')) {
+          //   const data = JSON.parse(localStorage.getItem('bestLunarTokenCache'));
+          //   this.plots = data.plots;
+          //   this.ensMap = data.ensMap;
+          //   console.log("mounted: data: " + JSON.stringify(data));
+          // }
 
           // console.log("mounted: bastardsOwned: " + JSON.stringify(this.tokensOwned, null, 2));
           // hljs.highlightAll();
