@@ -21,7 +21,7 @@
     <script src="js/dexie.js"></script>
     <script src="js/libgif.js"></script>
 
-    <script src="js/ethers-5.2.umd.min.js"></script>
+    <script src="js/ethers-5.4.4.umd.min.js"></script>
     <script src="js/highlight.min.js"></script>
     <script src="bastardData.min.js"></script>
     <script src="deploymentData.js"></script>
@@ -94,7 +94,7 @@
 
             <b-tabs card v-model="tabIndex" align="right">
 
-              <b-tab title="Owners">
+              <b-tab title="Market">
                 <b-card-text>
                   <div v-if="plots.length == 0">
                     Click CONNECT WALLET to view the LunarToken market data...
@@ -135,13 +135,22 @@
                     Discord: <b-link :href="'https://discord.gg/Vx2YM8VHE9'" target="_blank">https://discord.gg/Vx2YM8VHE9</b-link>
                   </p>
                   <p>
-                    This website: <b-link :href="'https://bokkypoobah.github.io/BestLunarToken/'" target="_blank">https://bokkypoobah.github.io/BestLunarToken/</b-link>
+                    Unofficial Wrapped LunarToken on OpenSea: <b-link :href="'https://opensea.io/assets/wrapped-lunar'" target="_blank">https://opensea.io/assets/wrapped-lunar</b-link>. Check before using.
+                  </p>
+                  <p>
+                    Unofficial Wrapped LunarToken UI for (un)wrapping: <b-link :href="'https://wrapped-lunars.netlify.app/'" target="_blank">https://wrapped-lunars.netlify.app/</b-link>. Check before using.
                   </p>
                   <p>
                     LunarToken Smart Contract: <b-link :href="'https://etherscan.io/address/0x43fb95c7afA1Ac1E721F33C695b2A0A94C7ddAb2#code'" target="_blank">https://etherscan.io/address/0x43fb95c7afA1Ac1E721F33C695b2A0A94C7ddAb2</b-link>
                   </p>
                   <p>
                     LunarTokenHelper Smart Contract: <b-link :href="'https://etherscan.io/address/0x9809dbeb9e030eb296c7c410758310dfcb1ef3dd#code'" target="_blank">https://etherscan.io/address/0x9809dbeb9e030eb296c7c410758310dfcb1ef3dd</b-link>
+                  </p>
+                  <p>
+                    This website: <b-link :href="'https://bokkypoobah.github.io/BestLunarToken/'" target="_blank">https://bokkypoobah.github.io/BestLunarToken/</b-link>
+                  </p>
+                  <p>
+                    GitHub for this website: <b-link :href="'https://github.com/bokkypoobah/BestLunarToken'" target="_blank">https://github.com/bokkypoobah/BestLunarToken</b-link>
                   </p>
                 </b-card-text>
               </b-tab>
