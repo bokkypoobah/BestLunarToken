@@ -60,7 +60,7 @@
             </div>
             <b-navbar-nav class="ml-auto">
               <b-button size="sm" variant="outline-primary" class="ml-4" @click="connect();" v-if="!connected">CONNECT WALLET</b-button>
-              <b-button size="sm" variant="outline-primary" class="ml-4" @click="disconnect();" v-if="connected">DISCONNECT WALLET {{ account.substring(0, 10).toUpperCase() }}</b-button>
+              <b-button size="sm" variant="outline-primary" class="ml-4" @click="disconnect();" v-if="connected">DISCONNECT WALLET {{ ensOrShortName(account) }}</b-button>
             </b-navbar-nav>
           </b-navbar>
         </div>
@@ -103,6 +103,24 @@
                   <!-- {{ plots }} -->
 
                   <b-table small :fields="fields" :items="plots" responsive="sm">
+                    <template #cell(tokenId)="data">
+                      <b-link :href="'https://lunartoken.co/detail/' + data.item.tokenId" v-b-popover.hover="'View plot in LunarToken.co'" target="_blank">
+                        {{ data.item.tokenId }}
+                      </b-link>
+                    </template>
+
+                    <template #cell(owner)="data">
+                      <b-link :href="'https://etherscan.io/address/' + data.item.owner" v-b-popover.hover="'View owner account in EtherScan'" target="_blank">
+                        {{ ensOrShortName(data.item.owner) }}
+                      </b-link>
+                      <!-- {{ data.item.tokens.length + ' (' + (data.item.tokens.length*100/getTotalSupply).toFixed(2) + '%)'}}<br />
+                      <b-link :href="'https://opensea.io/accounts/' + data.item.owner + '?search[sortAscending]=false&search[sortBy]=LAST_TRANSFER_DATE'" v-b-popover.hover="'VIEW OWNER ACCOUNT IN OPENSEA'" target="_blank">
+                         <b-icon-link shift-v="+1" font-scale="1.0"></b-icon-link>
+                      </b-link>
+                      <b-link size="sm" @click="settings.searchAccount = data.item.owner; tabIndex = 0; recalculate('ownerSearch'); " variant="outline-primary" v-b-popover.hover="'FILTER BY OWNER ACCOUNT'" >
+                        <b-icon-search shift-v="+1" font-scale="1.0"></b-icon-search>
+                      </b-link> -->
+                    </template>
                   </b-table>
                 </b-card-text>
                 <!-- <b-card-text>
@@ -346,6 +364,7 @@
           account: null,
 
           plots: [],
+          ensMap: {},
 
           owners: [],
           status: [],
@@ -377,7 +396,7 @@
             { value: 'list', text: 'LIST' },
           ],
           fields: [
-            { key: 'tokenId', label: 'TokenId', sortable: true },
+            { key: 'tokenId', label: '#', sortable: true },
             { key: 'owner', label: 'Owner', sortable: true },
             { key: 'forSale', label: 'ForSale', sortable: true },
             { key: 'disabled', label: 'Disabled', sortable: true },
@@ -586,20 +605,49 @@
                 console.log(new Date().toUTCString() + " numPlots: " + numPlots);
 
                 const plots = await lunarTokenHelper.plots(0, numPlots.toString());
-                console.log(new Date().toUTCString() + " plots: " + JSON.stringify(plots));
+                // console.log(new Date().toUTCString() + " plots: " + JSON.stringify(plots));
                 const _plots = [];
-                this.plots = [];
+                const ensMap = {};
                 for (let i = 0; i < plots[0].length && i < 3000; i++) {
                   const plotIndex = plots[0][i];
                   const plotOwner = plots[1][i];
+                  const plotOwnerLowerCase = plotOwner.toLowerCase();
                   const plotPrice = plots[2][i];
                   const plotForSale = plots[3][i] ? "y" : "n";
                   const plotMetadata = plots[4][i];
                   const plotDisabled = plots[5][i] ? "y" : "n";
-                  console.log(i + " " + plotIndex + " " + plotOwner);
+                  // console.log(i + " " + plotIndex + " " + plotOwner);
+                  if (!ensMap[plotOwnerLowerCase]) {
+                    ensMap[plotOwnerLowerCase] = plotOwner;
+                  }
                   _plots.push({ tokenId: i, owner: plotOwner, forSale: plotForSale, disabled: plotDisabled, price: ethers.utils.formatEther(plotPrice), metadata: plotMetadata });
                 }
                 this.plots = _plots;
+
+                ensMap[this.account.toLowerCase()] = this.account;
+                ensMap["0x000000000000000000000000000000000000dEaD".toLowerCase()] = "0DEAD_";
+                ensMap["0xE81175546F554ca6cEB63b142f27de7557C5Bf62".toLowerCase()] = "WLUNA_";
+                let addresses = Object.keys(ensMap);
+                console.log(new Date().toUTCString() + " addresses: " + JSON.stringify(addresses));
+
+                const ensReverseRecordsContract = new ethers.Contract(ENSREVERSERECORDSADDRESS, ENSREVERSERECORDSABI, provider);
+                const ENSOWNERBATCHSIZE = 500;
+                for (let i = 0; i < addresses.length; i += ENSOWNERBATCHSIZE) {
+                  // this.processing = "RETRIEVING LIVE ENS REVERSE RECORDS FROM THE ETHEREUM MAINNET: " + ethers.utils.commify(i) + " OF " + ethers.utils.commify(addresses.length);
+                  const batch = addresses.slice(i, parseInt(i) + ENSOWNERBATCHSIZE);
+                  const allNames = await ensReverseRecordsContract.getNames(batch);
+                  console.log(new Date().toUTCString() + " allNames: " + JSON.stringify(allNames));
+                  // NOT CHECKING ADDRESSES AS THE ADDRESSES CAME FROM A CONTRACT. AND account. const validNames = allnames.filter((n) => normalize(n) === n );
+
+                  for (let j = 0; j < batch.length; j++) {
+                    const address = batch[j];
+                    const name = allNames[j];
+                    ensMap[address] = name != null && name.length > 0 ? name : address;
+                    // const normalized = normalize(address);
+                  }
+                  console.log(new Date().toUTCString() + " ensMap: " + JSON.stringify(ensMap));
+                }
+                this.ensMap = ensMap;
 
                 /*
                 const lunarToken = new ethers.Contract(LUNARTOKENADDRESS, LUNARTOKENABI, provider);
@@ -700,6 +748,13 @@
             if (this.selectedItemGIF) {
               this.selectedItemGIF.move_to(this.selectedItemFrame);
             }
+          },
+          ensOrShortName(address) {
+              let name = this.ensMap[address.toLowerCase()] || address;
+              if (name != null) {
+                name = name.substring(0, 16);
+              }
+              return name;
           },
         },
         mounted() {
