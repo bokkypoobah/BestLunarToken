@@ -55,7 +55,7 @@
             </b-navbar-brand>
             <div v-for="item in getSelectedShowcase(17)">
               <b-link :href="'https://www.bastardganpunks.club/v2/' + item.tokenId" target="_blank">
-                <b-avatar rounded="sm" variant="light" size="3.0rem" :src="'./images/' + item.image" v-b-popover.hover.bottom="'Bokky\'s Blessed Bastard #' + item.tokenId + '. Reminder: Smoking kills!'" class="ml-2"></b-avatar>
+                <b-avatar rounded="sm" variant="light" size="3.0rem" :src="'./images/' + item.image" v-b-popover.hover.bottom="'BGANPunkV2#' + item.tokenId + ', LunarToken#135 Advanced Occupation Unit'" class="ml-2"></b-avatar>
               </b-link>
             </div>
             <b-navbar-nav class="ml-auto">
@@ -99,9 +99,9 @@
                     <div class="mx-5 px-5">
                       <b-embed type="iframe" aspect="1by1" :src="'https://interactive-lunar.netlify.app/' + settings.selectedPlot" allowfullscreen></b-embed>
                     </div>
-                    <div class="mx-5 px-5">
+                    <b-link :href="'https://lunartoken.co/detail/' + settings.selectedPlot" v-b-popover.hover="'View plot in LunarToken.co'" target="_blank">
                       <p class="text-center">Plot {{ settings.selectedPlot }}</p>
-                    </div>
+                    </b-link>
                   </div>
                 </div>
               </div>
@@ -115,7 +115,7 @@
                     Click CONNECT WALLET to view the LunarToken market data...
                   </div>
 
-                  <b-table small :fields="fields" :items="plots" responsive="sm">
+                  <b-table small selectable select-mode="single" :fields="fields" :items="plots" @row-clicked="rowSelected" responsive="sm">
                     <template #cell(tokenId)="data">
                       <b-link :href="'https://lunartoken.co/detail/' + data.item.tokenId" v-b-popover.hover="'View plot in LunarToken.co'" target="_blank">
                         {{ data.item.tokenId }}
@@ -565,6 +565,9 @@
           },
         },
         methods: {
+          rowSelected(record, index) {
+            this.settings.selectedPlot = record.tokenId;
+          },
           getSelectedShowcase(max = 18) {
             // const MAXBASTARDSTODISPLAY = 18;
             function shuffleArray(array) {
@@ -760,6 +763,8 @@
           },
         },
         mounted() {
+          // document.addEventListener('touchstart', handler, {passive: true});
+
           // if (localStorage.getItem('bestLunarTokenCache')) {
           //   const data = JSON.parse(localStorage.getItem('bestLunarTokenCache'));
           //   this.plots = data.plots;
