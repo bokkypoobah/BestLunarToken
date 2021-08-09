@@ -59,8 +59,8 @@
               </b-link>
             </div>
             <b-navbar-nav class="ml-auto">
-              <b-button size="sm" variant="outline-primary" class="ml-4" @click="connect();" v-if="!connected">CONNECT WALLET</b-button>
-              <b-button size="sm" variant="outline-primary" class="ml-4" @click="disconnect();" v-if="connected">DISCONNECT WALLET {{ ensOrShortName(account) }}</b-button>
+              <b-button size="sm" variant="outline-primary" class="ml-4" @click="connect();" v-if="!connected" v-b-popover.hover.bottom="'Click to retrieve ownership and ENS data'">Connect</b-button>
+              <b-button size="sm" variant="outline-primary" class="ml-4" @click="disconnect();" v-if="connected"  v-b-popover.hover.bottom="'Click twice to refresh ownership and ENS data'">{{ ensOrShortName(account, 16) }}</b-button>
             </b-navbar-nav>
           </b-navbar>
         </div>
@@ -731,10 +731,10 @@
               this.selectedItemGIF.move_to(this.selectedItemFrame);
             }
           },
-          ensOrShortName(address) {
+          ensOrShortName(address, length = 24) {
               let name = this.ensMap[address.toLowerCase()] || address;
               if (name != null) {
-                name = name.substring(0, 24);
+                name = name.substring(0, length);
               }
               return name;
           },
