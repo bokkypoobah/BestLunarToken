@@ -120,6 +120,8 @@
                       <b-link :href="'https://lunartoken.co/detail/' + data.item.tokenId" v-b-popover.hover="'View plot in LunarToken.co'" target="_blank">
                         {{ data.item.tokenId }}
                       </b-link>
+                      <b-img-lazy width="220%" :src="'https://wrapped-lunars.netlify.app/previews/' + data.item.tokenId + '.png'" />
+
                     </template>
 
                     <template #cell(owner)="data">
