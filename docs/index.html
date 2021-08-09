@@ -734,7 +734,7 @@
           ensOrShortName(address) {
               let name = this.ensMap[address.toLowerCase()] || address;
               if (name != null) {
-                name = name.substring(0, 16);
+                name = name.substring(0, 24);
               }
               return name;
           },
