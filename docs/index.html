@@ -135,7 +135,6 @@
                         {{ data.item.tokenId }}
                       </b-link>
                       <b-img-lazy width="220%" :src="'https://wrapped-lunars.netlify.app/previews/' + data.item.tokenId + '.png'" />
-
                     </template>
 
                     <template #cell(owner)="data">
@@ -149,6 +148,9 @@
                       <b-link size="sm" @click="settings.searchAccount = data.item.owner; tabIndex = 0; recalculate('ownerSearch'); " variant="outline-primary" v-b-popover.hover="'FILTER BY OWNER ACCOUNT'" >
                         <b-icon-search shift-v="+1" font-scale="1.0"></b-icon-search>
                       </b-link> -->
+                    </template>
+                    <template #cell(price)="data">
+                      {{ data.item.price > 1000000000 ? parseFloat(data.item.price).toFixed(3) : data.item.price }}
                     </template>
                   </b-table>
                 </b-card-text>
@@ -429,12 +431,12 @@
             { value: 'list', text: 'LIST' },
           ],
           fields: [
-            { key: 'tokenId', label: '#', sortable: true },
-            { key: 'owner', label: 'Owner', sortable: true },
-            { key: 'forSale', label: 'ForSale', sortable: true },
-            { key: 'disabled', label: 'Disabled', sortable: true },
-            { key: 'price', label: 'Price', sortable: true },
-            { key: 'metadata', label: 'Metadata', sortable: true },
+            { key: 'tokenId', label: '#', sortable: true, thStyle: 'width: 10%;' },
+            { key: 'owner', label: 'Owner', sortable: true, thStyle: 'width: 25%;' },
+            { key: 'forSale', label: 'ForSale', sortable: true, thStyle: 'width: 10%;' },
+            { key: 'disabled', label: 'Disabled', sortable: true, thStyle: 'width: 10%;' },
+            { key: 'price', label: 'Price', sortable: true, thStyle: 'width: 10%;' },
+            { key: 'metadata', label: 'Metadata', sortable: true, thStyle: 'width: 35%;' },
           ],
           ownedTokenFields: [
             { key: 'i', label: '#' },
