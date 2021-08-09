@@ -107,6 +107,20 @@
               </div>
             </div>
 
+            <div v-if="plots.length == 0">
+              <b-card header-tag="header" class="mx-5 my-2 p-0">
+                <template #header>
+                  <h6 class="mb-0">Web3 Connection Required</h6>
+                </template>
+                <b-card-text>
+                  This site is best viewed with a Web3 browser. E.g. The <b-link :href="'https://metamask.io'" v-b-popover.hover="'https://metamask.io'" target="_blank">MetaMask Extension</b-link> in Firefox, Chromium or Chrome, Opera, or any other other web3 browser.
+                </b-card-text>
+                <b-card-text>
+                  Click the Connect button on the top right.
+                </b-card-text>
+              </b-card>
+            </div>
+
             <b-tabs card v-model="tabIndex" align="right">
 
               <b-tab title="Market">
