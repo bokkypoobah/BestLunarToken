@@ -53,14 +53,14 @@
             <b-navbar-brand to="./" variant="primary" v-b-popover.hover.bottom="'BestLunarToken'">
               BestLunarToken
             </b-navbar-brand>
-            <div v-for="item in getSelectedShowcase">
+            <div v-for="item in getSelectedShowcase(17)">
               <b-link :href="'https://www.bastardganpunks.club/v2/' + item.tokenId" target="_blank">
                 <b-avatar rounded="sm" variant="light" size="3.0rem" :src="'./images/' + item.image" v-b-popover.hover.bottom="'Bokky\'s Blessed Bastard #' + item.tokenId + '. Reminder: Smoking kills!'" class="ml-2"></b-avatar>
               </b-link>
             </div>
             <b-navbar-nav class="ml-auto">
               <b-button size="sm" variant="outline-primary" class="ml-4" @click="connect();" v-if="!connected" v-b-popover.hover.bottom="'Click to retrieve ownership and ENS data'">Connect</b-button>
-              <b-button size="sm" variant="outline-primary" class="ml-4" @click="disconnect();" v-if="connected"  v-b-popover.hover.bottom="'Click twice to refresh ownership and ENS data'">{{ ensOrShortName(account, 16) }}</b-button>
+              <b-button size="sm" variant="outline-primary" class="ml-4" @click="disconnect();" v-if="connected"  v-b-popover.hover.bottom="'Click twice to refresh ownership and ENS data'">{{ ensOrShortName(account, 20) }}</b-button>
             </b-navbar-nav>
           </b-navbar>
         </div>
@@ -91,6 +91,21 @@
               </b-modal>
             </div>
             -->
+
+            <div class="mx-5 my-1 px-5 py-1">
+              <div class="mx-5 px-5">
+                <div class="mx-5 px-5">
+                  <div class="mx-5 px-5">
+                    <div class="mx-5 px-5">
+                      <b-embed type="iframe" aspect="1by1" :src="'https://interactive-lunar.netlify.app/' + settings.selectedPlot" allowfullscreen></b-embed>
+                    </div>
+                    <div class="mx-5 px-5">
+                      <p class="text-center">Plot {{ settings.selectedPlot }}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <b-tabs card v-model="tabIndex" align="right">
 
@@ -365,6 +380,9 @@
           plots: [],
           ensMap: {},
 
+          settings: {
+            selectedPlot: 135,
+          },
           owners: [],
           status: [],
           tokensOwned: [],
@@ -543,8 +561,10 @@
             }
             return results;
           },
-          getSelectedShowcase() {
-            const MAXBASTARDSTODISPLAY = 18;
+        },
+        methods: {
+          getSelectedShowcase(max = 18) {
+            // const MAXBASTARDSTODISPLAY = 18;
             function shuffleArray(array) {
               for (var i = array.length - 1; i > 0; i--) {
                 var j = Math.floor(Math.random() * (i + 1));
@@ -559,10 +579,8 @@
             // }
             let tokenIdsOwned = this.bokkysBastards.slice(0);
             shuffleArray(tokenIdsOwned);
-            return tokenIdsOwned.slice(0, MAXBASTARDSTODISPLAY);
+            return tokenIdsOwned.slice(0, max);
           },
-        },
-        methods: {
           getSortedValuesForCategory(category) {
             console.log(" --- " + category + " ---");
             console.log(JSON.stringify(this.getCategories[category]));
