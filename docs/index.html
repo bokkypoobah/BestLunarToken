@@ -360,6 +360,7 @@
         data: {
           connected: false,
           account: null,
+          wallets: [],
 
           plots: [],
           ensMap: {},
@@ -642,8 +643,8 @@
                   }
                   // console.log(new Date().toUTCString() + " ensMap: " + JSON.stringify(ensMap));
                 }
-                ensMap["0x000000000000000000000000000000000000dEaD".toLowerCase()] = "0DEAD_";
-                ensMap["0xE81175546F554ca6cEB63b142f27de7557C5Bf62".toLowerCase()] = "WLUNA_";
+                ensMap[dEaD.toLowerCase()] = "0DEAD_";
+                ensMap[WLUNA.toLowerCase()] = "WLUNA_";
                 this.ensMap = ensMap;
 
                 localStorage.setItem('bestLunarTokenCache', JSON.stringify({ plots: plots, ensMap: ensMap, timestamp: timestamp }));

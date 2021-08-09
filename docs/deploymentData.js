@@ -7,3 +7,6 @@ const LUNARTOKENABI = [{"constant":false,"inputs":[{"name":"enabled","type":"boo
 
 const LUNARTOKENHELPERADDRESS = "0x9809Dbeb9e030eb296C7C410758310Dfcb1ef3DD";
 const LUNARTOKENHELPERABI = [{"inputs":[],"name":"lunarToken","outputs":[{"internalType":"contract ILunarToken","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"from","type":"uint256"},{"internalType":"uint256","name":"to","type":"uint256"}],"name":"plots","outputs":[{"internalType":"uint256[]","name":"_tokenIds","type":"uint256[]"},{"internalType":"address[]","name":"_owners","type":"address[]"},{"internalType":"uint256[]","name":"_prices","type":"uint256[]"},{"internalType":"bool[]","name":"_forSales","type":"bool[]"},{"internalType":"string[]","name":"_metadatas","type":"string[]"},{"internalType":"bool[]","name":"_disableds","type":"bool[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"tokenInfo","outputs":[{"internalType":"string","name":"_symbol","type":"string"},{"internalType":"string","name":"_name","type":"string"},{"internalType":"uint256[]","name":"_data","type":"uint256[]"}],"stateMutability":"view","type":"function"}];
+
+const dEaD = "0x000000000000000000000000000000000000dEaD";
+const WLUNA = "0xE81175546F554ca6cEB63b142f27de7557C5Bf62";
