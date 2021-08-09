@@ -55,7 +55,7 @@
             </b-navbar-brand>
             <div v-for="item in getSelectedShowcase(17)">
               <b-link :href="'https://www.bastardganpunks.club/v2/' + item.tokenId" target="_blank">
-                <b-avatar rounded="sm" variant="light" size="3.0rem" :src="'./images/' + item.image" v-b-popover.hover.bottom="'BGANPunkV2#' + item.tokenId + ', LunarToken#135 Advanced Occupation Unit'" class="ml-2"></b-avatar>
+                <b-avatar rounded="sm" variant="light" size="3.0rem" :src="'./images/' + item.image" v-b-popover.hover.bottom="'#' + item.tokenId + '/ZOMBIE BGANPunk Advanced Occupation Base #135 🧟🧟🧟'" class="ml-2"></b-avatar>
               </b-link>
             </div>
             <b-navbar-nav class="ml-auto">
@@ -581,6 +581,7 @@
         methods: {
           rowSelected(record, index) {
             this.settings.selectedPlot = record.tokenId;
+            localStorage.setItem('lunarTokenSettings', JSON.stringify(this.settings));
           },
           getSelectedShowcase(max = 18) {
             // const MAXBASTARDSTODISPLAY = 18;
@@ -777,6 +778,12 @@
           },
         },
         mounted() {
+          if (localStorage.getItem('lunarTokenSettings')) {
+            const savedSettings = JSON.parse(localStorage.getItem('lunarTokenSettings'));
+            // if (savedSettings.cardView != null) {
+            this.settings = savedSettings;
+            // }
+          }
           // document.addEventListener('touchstart', handler, {passive: true});
 
           // if (localStorage.getItem('bestLunarTokenCache')) {
