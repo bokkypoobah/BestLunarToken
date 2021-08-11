@@ -123,12 +123,8 @@
 
             <b-tabs card v-model="tabIndex" align="right">
 
-              <b-tab title="Market">
+              <b-tab title="LunarToken Plots">
                 <b-card-text>
-                  <div v-if="plots.length == 0">
-                    Click CONNECT WALLET to view the LunarToken market data...
-                  </div>
-
                   <b-table small selectable select-mode="single" :fields="fields" :items="plots" @row-clicked="rowSelected" responsive="sm">
                     <template #cell(tokenId)="data">
                       <b-link :href="'https://lunartoken.co/detail/' + data.item.tokenId" v-b-popover.hover="'View plot in LunarToken.co'" target="_blank">
