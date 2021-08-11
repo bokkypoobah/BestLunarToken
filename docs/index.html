@@ -172,200 +172,79 @@
                 </b-card-text> -->
               </b-tab>
 
-              <b-tab title="Info">
+              <b-tab active title="Info">
                 <b-card-text>
-                  <p>
-                    Original website: <b-link :href="'https://lunartoken.co/'" target="_blank">https://lunartoken.co/</b-link>. Exchange fee 10% @ Aug 9 2021.
-                  </p>
-                  <p>
-                    Twitter: <b-link :href="'https://twitter.com/lunar_token'" target="_blank">https://twitter.com/lunar_token</b-link>
-                  </p>
-                  <p>
-                    Discord: <b-link :href="'https://discord.gg/Vx2YM8VHE9'" target="_blank">https://discord.gg/Vx2YM8VHE9</b-link>
-                  </p>
-                  <p>
-                    Unofficial Wrapped LunarToken on OpenSea: <b-link :href="'https://opensea.io/assets/wrapped-lunar'" target="_blank">https://opensea.io/assets/wrapped-lunar</b-link>.  Exchange fee 2.50% for OpenSea and 2.50% for Wrapper dev @ Aug 9 2021. Check before using.
-                  </p>
-                  <p>
-                    Unofficial Wrapped LunarToken UI for (un)wrapping: <b-link :href="'https://wrapped-lunars.netlify.app/'" target="_blank">https://wrapped-lunars.netlify.app/</b-link>. Check before using.
-                  </p>
-                  <p>
-                    LunarToken Smart Contract: <b-link :href="'https://etherscan.io/address/0x43fb95c7afA1Ac1E721F33C695b2A0A94C7ddAb2#code'" target="_blank">https://etherscan.io/address/0x43fb95c7afA1Ac1E721F33C695b2A0A94C7ddAb2</b-link>
-                  </p>
-                  <p>
-                    LunarTokenHelper Smart Contract: <b-link :href="'https://etherscan.io/address/0x9809dbeb9e030eb296c7c410758310dfcb1ef3dd#code'" target="_blank">https://etherscan.io/address/0x9809dbeb9e030eb296c7c410758310dfcb1ef3dd</b-link>
-                  </p>
-                  <p>
-                    This website: <b-link :href="'https://bokkypoobah.github.io/BestLunarToken/'" target="_blank">https://bokkypoobah.github.io/BestLunarToken/</b-link>
-                  </p>
-                  <p>
-                    GitHub for this website: <b-link :href="'https://github.com/bokkypoobah/BestLunarToken'" target="_blank">https://github.com/bokkypoobah/BestLunarToken</b-link>
-                  </p>
+
+                  <h6 class="mb-1">What is this website about?</h6>
+                  <b-card-text>
+                    This website is a small Web3 decentralised application (Dapp) to collate and display <a href="https://lunartoken.co/" target="_blank">LunarToken</a> ownership, price and metadata. Open source code is available for you to improve on - see below
+                  </b-card-text>
+
+                  <b-card-text>
+                    We are not affiliated with <a href="https://lunartoken.co/" target="_blank">LunarToken</a> or the wrapper developer. If you have questions, head over to the Discord, linked below.
+                  </b-card-text>
+
+                  <b-card-text>
+                  </b-card-text>
+
+
+                  <h6 class="mt-4 mb-1">References</h6>
+                  <b-card-text>
+                    <ul>
+                      <li>Original website - <a href="https://lunartoken.co/" target="_blank">https://lunartoken.co/</a>. Exchange fee was <a href="https://twitter.com/BokkyPooBah/status/1425348895253532677?s=20" target="_blank">5% @ Aug 11 2021, down from 10% @ Aug 9 2021</a></li>
+                      <li>Twitter - <a href="https://twitter.com/lunar_token" target="_blank">@lunar_token</a></li>
+                      <li>Discord - <a href="https://discord.gg/Vx2YM8VHE9" target="_blank">https://discord.gg/Vx2YM8VHE9</a></li>
+                      <li><a href="https://opensea.io/collection/wrapped-lunar" target="_blank">The Official Wrapped Lunar Tokens</a> on OpenSea. Exchange fee is 7.5%, of which 2.5% goes to OpenSea and 5% to the wrapper developer @ Aug 11 2021</li>
+                      <li>Web3 (Un)Wrapping UI - <a href="https://wrapped-lunars.netlify.app/" target="_blank">https://wrapped-lunars.netlify.app/</a>. "Wrapping requires 3 transactions, please approve them all!"</li>
+                      <li>LunarToken Smart Contract - <a href="https://etherscan.io/address/0x43fb95c7afA1Ac1E721F33C695b2A0A94C7ddAb2#code" target="_blank">0x43fb95c7afA1Ac1E721F33C695b2A0A94C7ddAb2</a></li>
+                      <li>LunarTokenHelper Smart Contract - <a href="https://etherscan.io/address/0x9809dbeb9e030eb296c7c410758310dfcb1ef3dd#code" target="_blank">0x9809dbeb9e030eb296c7c410758310dfcb1ef3dd</a>. Enables this web app to quickly query the Ethereum blockchain for plot ownership info and metadata.</li>
+                      <li>This website - <a href="https://bokkypoobah.github.io/BestLunarToken/" target="_blank">https://bokkypoobah.github.io/BestLunarToken/</a></li>
+                      <li>GitHub for this website - <a href="https://github.com/bokkypoobah/BestLunarToken" target="_blank">https://github.com/bokkypoobah/BestLunarToken</a></li>
+                    </ul>
+                  </b-card-text>
+
+                  <h6 class="mt-4 mb-1">About This App</h6>
+                  <b-card-text>
+                    <ul>
+                      <li>Source code for this app is available at <a href="https://github.com/bokkypoobah/BestLunarToken" target="_blank">https://github.com/bokkypoobah/BestLunarToken</a></li>
+                      <li>The main bit of code is in <a href="https://github.com/bokkypoobah/BestLunarToken/blob/main/docs/index.html" target="_blank">https://github.com/bokkypoobah/BestLunarToken/blob/main/docs/index.html</a></li>
+                      <li>Interactive and non-interactive images of LunarToken on this website is served from a publicly available API. e.g. Plot #135 - interactive @ <a href="https://interactive-lunar.netlify.app/135" target="_blank">https://interactive-lunar.netlify.app/135</a>, and non-interactive @ <a href="https://wrapped-lunars.netlify.app/previews/135.png" target="_blank">https://wrapped-lunars.netlify.app/previews/135.png</a></li>
+                      <li>To see how this app works, switch to your web browser developer console and try stepping through the source code</li>
+                      <li>Written using the <a href="https://bootstrap-vue.org/" target="_blank">https://bootstrap-vue.org/</a> framework</li>
+                      <li>Uses <a href="https://github.com/ethers-io/ethers.js/" target="_blank">ethers.js</a> to connect to Ethereum via Web3 to retrieve the ownership and metadata information. The LunarTokenHelper smart contract is used to batch request this data.</li>
+                      <li>Has no trackign technology. However, connections from this app to external links may leak informaion and your web3 provider may be collecting account data</li>
+                      <li>Can be run from your own computer by cloning the GitHub repository and serving the pages in the ./docs folder using a webserver, or, the "Anywhere" server</li>
+                      <li>Can be run from GitHub pages, so you can easily clone, customise and serve your very own version via GitHub Pages serving the ./docs folder</li>
+                      <li>Clone it, fork it, run it from your GitHub using GitHub Pages. Contribute any useful changes back to this repository. Or not</li>
+                      <li>The BGANPUNK images in this repository are solely for use in this app, and derivatives of this app.</li>
+                    </ul>
+                  </b-card-text>
+
+                  <h6 class="mt-4 mb-1">Support The Creation Of Public Goods</h6>
+                  <b-card-text>
+                    <ul>
+                      <li>If this tool has helped you, especially financially, consider sending a donation to <a href="https://etherscan.io/address/BokkyPooBah.eth" target="_blank">BokkyPooBah.eth</a>. PUBLIC GOODS NEED FUNDING!!!</li>
+                    </ul>
+                  </b-card-text>
+
+                  <b-card-text class="mt-5">
+                    Enjoy!
+
+                    <b-card no-body img-src="images/SEXYAFSHADOWYSUPER-CODEBORKERS.png" style="max-width: 20rem;" class="mt-1 ml-2"></b-card>
+                    (c) BokkyPooBah / Bok Consulting Pty Ltd 2021. The MIT Licence.
+                  </b-card-text>
+
+
                 </b-card-text>
               </b-tab>
 
-
               <!--
-              <b-tab title="SEXY BASTARDS">
-                <b-card-text>
-                  <div class="d-flex m-0 p-0" style="height: 37px;">
-                    <div>
-                      <b-form-input type="text" size="sm" v-model.trim="searchString" debounce="600" placeholder="SEARCH..." v-b-popover.hover="'SEARCH BY TOKENID OR WORD IN LYRICS'"></b-form-input>
-                    </div>
-                    <div class="pl-2">
-                      <b-button v-b-toggle.collapse-search size="sm" variant="none"><b-button size="sm" variant="link" class="m-0 p-0" v-b-popover.hover="'ADVANCED SERACH'" ><b-icon-filter shift-v="+1" font-scale="1.7"></b-icon-filter></b-button></b-button>
-                    </div>
-                    <div class="pl-2">
-                      <b-button size="sm" :pressed.sync="displayOwned" variant="outline-primary">MY SEXY BASTARDS</b-button>
-                    </div>
-                    <div class="pr-1 flex-grow-1">
-                    </div>
-                    <div class="pl-2">
-                      <font size="-2">{{ getSearchResultsRows }}/{{ getTotalSupply }}</font>
-                    </div>
-                    <div class="pl-2">
-                      <b-pagination size="sm" v-model="searchCurrentPage" :total-rows="getSearchResultsRows" :per-page="searchPerPage"></b-pagination>
-                    </div>
-                    <div class="pl-2">
-                      <b-form-select size="sm" v-model="searchPerPage" :options="searchPerPageOptions"></b-form-select>
-                    </div>
-                    <div class="pl-2">
-                      <b-form-select size="sm" v-model="view" :options="viewOptions"></b-form-select>
-                    </div>
-                  </div>
-
-                  <div>
-                    <b-collapse id="collapse-search" class="m-2">
-                      <b-card>
-                        <b-row v-for="categoryKey in Object.keys(getCategories).sort()">
-                          <b-col> {{ categoryKey }}</b-col>
-                          <b-col>
-                            <b-row v-for="valuesKey in getSortedValuesForCategory(categoryKey)">
-                              {{ valuesKey }} : {{ getCategories[categoryKey] }}
-                            </b-row>
-                          </b-col>
-                        </b-row>
-                      </b-card>
-                    </b-collapse>
-                  </div>
-
-                  <div v-if="view == 'cards'">
-                    <b-card-group deck>
-                      <div v-for="record in getSearchResultsPage">
-                        <b-card body-class="p-1" header-class="p-1" footer-class="p-1" img-top class="m-1 p-0">
-                          <template #header>
-                            <span variant="secondary" class="small truncate">
-                              {{ '#' + record.tokenId }}
-                            </span>
-                          </template>
-                          <b-link @click="addAsset(record.tokenId)" v-b-popover.hover="'Click for details'">
-                            <b-img-lazy width="220%" :src="record.osimage" />
-                          </b-link>
-                        </b-card>
-                      </div>
-                    </b-card-group>
-                  </div>
-                  <div v-if="view == 'list'">
-                    <b-table small :fields="fields" :items="getSearchResultsPage" responsive="sm">
-                      <template #cell(tokenId)="data">
-                        <b-link :href="data.item.permalink + '?ref=0x000001f568875F378Bf6d170B790967FE429C81A'" v-b-popover.hover="'View on OpenSea.io'" target="_blank">
-                          {{ data.item.tokenId }}
-                        </b-link>
-                        <div v-if="data.item.mosaicurl != null">
-                          <b-link :href="data.item.mosaicurl" v-b-popover.hover="'View HYPED AF (ANIMATED) mosaic'" target="_blank">
-                            mosaic
-                          </b-link>
-                        </div>
-                      </template>
-                      <template #cell(image)="data">
-                        <b-link @click="addAsset(data.item.tokenId)" v-b-popover.hover="'Click for details'">
-                          <b-img-lazy width="200%" :src="data.item.osimage" />
-                        </b-link>
-                      </template>
-                      <template #cell(description)="data">
-                        <span v-for="line in data.item.description.split('\n')">
-                          <b>{{ line }}</b><br />
-                        </span>
-                      </template>
-                      <template #cell(attributes)="data">
-                        <b-row v-for="attribute in data.item.attributes"  v-bind:key="attribute.trait_type" class="m-0 p-0">
-                          <b-col class="m-0 p-0"><font size="-3">{{ attribute.trait_type }}</font></b-col><b-col class="m-0 p-0"><b><font size="-2">{{ attribute.value }}</font></b></font></b-col>
-                        </b-row>
-                      </template>
-                    </b-table>
-                  </div>
-                </b-card-text>
-              </b-tab>
-              -->
-
-              <!--
-              <b-tab title="MY FUCKING WALLET">
-                <b-card-text>
-                  SELECT <em>MY SEXY BASTARDS</em> IN THE PREVIOUS TAB TO VIEW YOUR BASTARDS.<br />
-                  <b-table small :fields="ownedTokenFields" :items="getOwnedTokenIdData" responsive="sm">
-                  </b-table>
-                </b-card-text>
-              </b-tab>
-              -->
-
-              <!--
-              <b-tab title="INFO">
-                <h6 class="mb-1">WHAT IS THIS WEBSHITE ABOUT?</h6>
-                <b-card-text>
-                  A SMOL WEB3 APP TO VIEW YOUR BASTARD GAN PUNKS FROM <a href="https://www.bastardganpunks.club/" target="_blank">https://www.bastardganpunks.club/</a>. OPEN SAUCED CODE IS AVAILBLE FOR YOUR TO IMPROVE ON - SEE BELOW.
-
-                  THIS SITE CURRENTLY LISTS BGANPUNKV2 (VERSION 2) NFTS, NOT BGANPUNKV1 (VERSION 1) <a href="https://bganpunks.eth.link/" target="_blank">https://bganpunks.eth.link/</a>.
-                </b-card-text>
-
-                <b-card-text>
-                  WER ARE NOT AFFILIATED WITH <a href="https://twitter.com/bganpunks" target="_blank">THESE BASTARDS</a> WITH A SANDWICH LOGO. IF YOU HAVE QUESTIONS, HEAD OVER TO THEIR DISCORD, LINEKD FROM THE URLS ABOVE.
-                  <b-card no-body img-src="images/Twitter_bganpunks.png" style="max-width: 20rem;" class="mt-1 ml-2"></b-card>
-                </b-card-text>
-
-                <b-card-text>
-                  NFT AND IMAGE COPYRIGHT INFO SEE <a href="https://www.bastardganpunks.club/#nftownership" target="_blank">https://www.bastardganpunks.club/#nftownership</a>.
-
-                  A COPY OF THE <a href="https://drive.google.com/drive/folders/1dLnTSUhDlgfdUlzwm1pamiAWUyGVOGj-" target="_blank">HYPED AF MOSAICS</a> HAS BEEN INCLUDED WITH THIS WEBSHITE TO ORGANISE FOR EASIER ACCESS. ONLY THE HYPED AF (ANIMATED) MOSAICS IN THE FIRST 9,000 (#0 to #8,999) TOKENS HAVE BEEN ORGANISED AND THIS REPOSITORY WILL HAVE TO BE UPDATED WHEN THE ORGANISED MOSAICS ARE FINALLY PUBLISHED.
-                </b-card-text>
-
                 <h6 class="mt-4 mb-1">HOW DO I ADOPT SOME BASTARDS?</h6>
                 <b-card-text>
-                  THE LAST BASTARD WAS MINTED (SEE BELOW) AT <a href="https://etherscan.io/tx/0x8540f856b6db0eab792fda749730865a10178260da06541c84cf585d8dc60592" target="_blank">Jun-25-2021 04:53:13 PM +UTC</a> THROUGH A PROXY CONTRACT AND THERE ARE NO MORE BASTARDS TO ADOPT.
-
-                  BGANPUNKV2 NFTS CAN BE PURCHASED FROM SECONDARY ERC-721 MARKETS SUCH AS <a href="https://opensea.io/collection/bastard-gan-punks-v2" target="_blank">https://opensea.io/collection/bastard-gan-punks-v2</a>.
-
-                  SEE ALSO <a href="https://allbastards.com/" target="_blank">https://allbastards.com/</a> and <a href="https://nftexp.io/explore/bastard-gan-punks-v2" target="_blank">https://nftexp.io/explore/bastard-gan-punks-v2</a> FOR MORE INFROMATION.
 
                   THIS IS NOT FINANCIAL ADVICE. DO YOUR OWN FUCKING RESEARCH.
                 </b-card-text>
 
-                <h6 class="mt-4 mb-1">CONTRACT DETAILS</h6>
-                <b-card-text>
-                  THE BGANPUNV2 NFT SMART CONTRACT AT <a href="https://etherscan.io/address/0x31385d3520bCED94f77AaE104b406994D8F2168C#code" target="_blank">0x31385d3520bCED94f77AaE104b406994D8F2168C</a>:
-                  <ul>
-                    <li>WAS DEPLOYED AT <a href="https://etherscan.io/tx/0xd875fb294bf841eaf7bffae94bd5488d78f227e9b4a3017105bae31b296419ce" target="_blank">Mar-07-2021 12:03:56 PM +UTC</a> WHERE TOKENS #0 TO 33 WERE MINTED</li>
-                    <li>MINTED THE FINAL TOKEN #11,304 AT <a href="https://etherscan.io/tx/0x8540f856b6db0eab792fda749730865a10178260da06541c84cf585d8dc60592" target="_blank">Jun-25-2021 04:53:13 PM +UTC</a> THROUGH A PROXY CONTRACT WITH A DECLINING PRICE</li>
-                  </ul>
-                  <b-card img-src="images/EtherScan_BGANPUNKSV2_20210703_2211.png" style="max-width: 40rem;" class="ml-5">
-                    <b-card-text>
-                      ETHERSCAN'S <a href="https://etherscan.io/token/tokenholderchart/0x31385d3520bced94f77aae104b406994d8f2168c" target="_blank">BASTARD GAN PUNKS V2 TOKEN HOLDERS @ Jul 3 2021</a>
-                    </b-card-text>
-                  </b-card>
-                </b-card-text>
-
-                <h6 class="mt-4 mb-1">ABOUT THIS APP</h6>
-                <b-card-text>
-                  <ul>
-                    <li>SOURCE CODE AVAILABLE AT <a href="https://github.com/bokkypoobah/BestBastardGANPunks" target="_blank">https://github.com/bokkypoobah/BestBastardGANPunks</a>. CLONE IT, FORK IT. CONTRIBUTE ANY USEFUL CHANGES BACK TO THIS MAIN REPOSITORY</li>
-                    <li>WRITTEN USING THE <a href="https://bootstrap-vue.org/" target="_blank">https://bootstrap-vue.org/</a> FRAMEWWORK</li>
-                    <li>GENERATES "STATIC" DATA BY COLLATING INFOTMSTION FROM THE TOKEN CONTACT'S <em>tokenURI(...)</em> INFORMATION WITH THE INFOTRMATION FROM OPENSEA.IO.</li>
-                    <li>USES <a href="https://github.com/ethers-io/ethers.js/" target="_blank">ETHERS.JS</a> TO CONNECT TO ETHERUEM VIA WEB3 TO RETRIEVE NFT TOKENS OWNED</li>
-                    <li>HAS NO TRACKIING TECHNOLOGY. HOWEVER CONNECTIONS FROM THIS APP TO OPENSEA AND YOUR WEB3 PROVIDER WILL LEAK SOME INFORMATION.</li>
-                    <li>CAN BE RUN ON YOUR OWN COMPUTER BY CLONING THE GITHUB REPOSITORY AND SERVING THE PAGES USING A WEBSERVER, OR THE "ANYWHERE" SERVER.</li>
-                    <li>CAN BE RUN FROM GITHUB PAGES, SO YOU CAN EASILY CLONE, CUSTOMISE AND SERVE YOUR OWN VERSION</li>
-                    <li>THIS APP DOES ADD A REF LINK TO MY ACCOUNT TO OPENSEA URLS</li>
-                  </ul>
-                </b-card-text>
 
                 <h6 class="mt-4 mb-1">SUPPORT A POOR DEVLOPER BASTARD</h6>
                 <b-card-text>
@@ -628,27 +507,17 @@
                 this.connected = true;
                 console.log(new Date().toUTCString() + " Starting query");
                 const timestamp = parseInt(new Date() / 1000);
-
                 const lunarTokenHelper = new ethers.Contract(LUNARTOKENHELPERADDRESS, LUNARTOKENHELPERABI, provider);
                 const tokenInfo = await lunarTokenHelper.tokenInfo();
                 console.log(new Date().toUTCString() + " tokenInfo: " + JSON.stringify(tokenInfo));
-                // const name = await lunarToken.name();
-                // console.log(new Date().toUTCString() + " name: " + name);
-                // const numPlots = await lunarToken.numPlots();
-                // console.log(new Date().toUTCString() + " numPlots: " + numPlots);
-
-                // function plots(uint from, uint to) external view returns(
-                // uint[] memory _tokenIds, address[] memory _owners, uint[] memory _prices,
-                // bool[] memory _forSales, string[] memory _metadatas, bool[] memory _disableds/*, uint8[] memory _subdivisions, uint[] memory _parentIds*/) {
-
                 const numPlots = tokenInfo[2][0];
                 console.log(new Date().toUTCString() + " numPlots: " + numPlots);
-
+                const wlunaLowerCase =  WLUNA.toLowerCase();
                 const plots = await lunarTokenHelper.plots(0, numPlots.toString());
-                // console.log(new Date().toUTCString() + " plots: " + JSON.stringify(plots));
                 const _plots = [];
                 const ensMap = {};
-                for (let i = 0; i < plots[0].length && i < 3000; i++) {
+                const wlunaTokenIds = [];
+                for (let i = 0; i < plots[0].length; i++) {
                   const plotIndex = plots[0][i];
                   const plotOwner = plots[1][i];
                   const plotOwnerLowerCase = plotOwner.toLowerCase();
@@ -660,9 +529,13 @@
                   if (!ensMap[plotOwnerLowerCase]) {
                     ensMap[plotOwnerLowerCase] = plotOwner;
                   }
+                  if (plotOwnerLowerCase == wlunaLowerCase) {
+                    wlunaTokenIds.push(plotIndex);
+                  }
                   _plots.push({ tokenId: i, owner: plotOwner, forSale: plotForSale, disabled: plotDisabled, price: ethers.utils.formatEther(plotPrice), metadata: plotMetadata });
                 }
                 this.plots = _plots;
+                console.log("wlunaTokenIds: " + JSON.stringify(wlunaTokenIds));
 
                 ensMap[this.account.toLowerCase()] = this.account;
                 let addresses = Object.keys(ensMap);
@@ -670,7 +543,6 @@
                 const ensReverseRecordsContract = new ethers.Contract(ENSREVERSERECORDSADDRESS, ENSREVERSERECORDSABI, provider);
                 const ENSOWNERBATCHSIZE = 500;
                 for (let i = 0; i < addresses.length; i += ENSOWNERBATCHSIZE) {
-                  // this.processing = "RETRIEVING LIVE ENS REVERSE RECORDS FROM THE ETHEREUM MAINNET: " + ethers.utils.commify(i) + " OF " + ethers.utils.commify(addresses.length);
                   const batch = addresses.slice(i, parseInt(i) + ENSOWNERBATCHSIZE);
                   const allNames = await ensReverseRecordsContract.getNames(batch);
                   console.log(new Date().toUTCString() + " allNames: " + JSON.stringify(allNames));
@@ -684,7 +556,7 @@
                   // console.log(new Date().toUTCString() + " ensMap: " + JSON.stringify(ensMap));
                 }
                 ensMap[dEaD.toLowerCase()] = "0DEAD_";
-                ensMap[WLUNA.toLowerCase()] = "WLUNA_";
+                ensMap[wlunaLowerCase] = "WLUNA_";
                 this.ensMap = ensMap;
 
                 localStorage.setItem('bestLunarTokenCache', JSON.stringify({ plots: plots, ensMap: ensMap, timestamp: timestamp }));
